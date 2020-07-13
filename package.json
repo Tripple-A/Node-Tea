@@ -1,0 +1,19 @@
+{
+  "name": "nodelearn",
+  "version": "1.0.0",
+  "description": "Learning node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Biodun",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tripple-A/Node-Tea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tripple-A/Node-Tea/issues"
+  },
+  "homepage": "https://github.com/Tripple-A/Node-Tea#readme"
+}
