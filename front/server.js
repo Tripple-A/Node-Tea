@@ -1,25 +1,16 @@
-import https from 'https';
-import http from 'http';
-import config, { logStars } from './config';
+import express from 'express';
+import config from './config';
 
-https.get('https://www.lynda.com',res => {
-  //console.log('response status:', res.statusCode);
+const server = express();
 
-  res.on('data',chunk => {
-    // console.log(chunk.toString());
-  });
+server.get('/', (req,res) => {
+  res.send('Biodun is the greatest')
 });
 
-const server = http.createServer((req, res) => {
-    res.write('Hello HTTP!\n');
-    setTimeout(() => {
-      res.write('I can stream!\n');
-      res.end();
-    }, 3000);
+server.get('/about', (req,res) => {
+    res.send('About Biodun is the greatest')
   });
 
-server.listen(config.port);
-
-//logStars('Biodun the great');
-
-
+server.listen(config.port,() => {
+    console.info(`listening on porte ${config.port}`);
+})
