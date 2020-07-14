@@ -1,10 +1,9 @@
 import express from 'express';
- const router = express.Router();
+const router = express.Router();
+//express().set('view engine', 'ejs');
 
- router.get('/',(req,res) => {
-   res.send({
-       me: 'hey'
-   })
+router.get('/',(req,res) => {
+   res.render('index');
  });
 
 export default router;

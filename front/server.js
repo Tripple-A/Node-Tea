@@ -2,9 +2,12 @@ import express from 'express';
 import apiRouter from './api';
 import config from './config';
 const server = express();
+server.set('view engine', 'ejs');
 
 server.get('/', (req,res) => {
-  res.send('Biodun is the greatest');
+  res.render('index', {
+      content: 'Hey there and <b> you </b>'
+  });
 });
 
 
