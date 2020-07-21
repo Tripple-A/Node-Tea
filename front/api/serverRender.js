@@ -8,7 +8,10 @@ const serverRender = () => {
     return axios.get(`${config.serverUrl}/api`)
 .then(resp => {
     console.log('gey')
-    return  ReactDOMServer.renderToString(<App data={resp.data} />)
+    return  {
+        markUp: ReactDOMServer.renderToString(<App data={resp.data} />),
+        data: resp.data
+    }
 })
 .catch(err => console.log(err))
 }

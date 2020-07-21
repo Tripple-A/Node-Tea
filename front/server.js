@@ -16,12 +16,14 @@ server.use(sassMiddleware({
 server.set('view engine', 'ejs');
 
 server.get('/', (req,res) => {
-  serverRender().then(string => {
-  res.render('index', {
-     string
+  serverRender().then(ans => {
+    const {data, markUp} = ans
+    res.render('index', {
+        data,
+        markUp
+      });
+    res.end()
   })
-  }).catch(err => console.log(err))
-  
 });
 
 

@@ -3,7 +3,7 @@ import App from './components/App';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  <App data={{contests: []}} />,
+  <App data={{contests: window.data.contests}} />,
   document.getElementById('root')
 );
 
