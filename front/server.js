@@ -1,7 +1,7 @@
 import express from 'express';
 import apiRouter from './api';
 import config from './config';
-import './api/serverRender'
+import serverRender from './api/serverRender'
 
 import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
@@ -16,9 +16,12 @@ server.use(sassMiddleware({
 server.set('view engine', 'ejs');
 
 server.get('/', (req,res) => {
+  serverRender().then(string => {
   res.render('index', {
-    content: 'Hey there and <b> you </b>'
-  });
+     string
+  })
+  }).catch(err => console.log(err))
+  
 });
 
 
