@@ -7,6 +7,7 @@ export const logStars = function(message) {
 };
 
 export default {
+  mongodbUri: 'mongodb://localhost:27017/test',
   port: env.PORT || 8080,
   nodeEnv: env.NODE_ENV || 'development',
   host: env.HOST || '0.0.0.0',
