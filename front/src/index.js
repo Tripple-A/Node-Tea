@@ -1,16 +1,9 @@
 import React from 'react';
+import App from './components/App';
 import ReactDOM from 'react-dom';
-const App = () => {
-  console.log('here');
-  return (
-    <div>
-            hello React
-    </div>
-  );
-};
-console.log('herefirst');
+
 ReactDOM.render(
-  <App />,
+  <App data={[]} />,
   document.getElementById('root')
 );
 

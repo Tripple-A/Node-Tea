@@ -8,5 +8,9 @@ export const logStars = function(message) {
 
 export default {
   port: env.PORT || 8080,
-  nodeEnv: env.NODE_ENV || 'development'
+  nodeEnv: env.NODE_ENV || 'development',
+  host: env.HOST || '0.0.0.0',
+  get serverUrl() {
+    return `http://${this.host}:${this.port}`;
+  }
 };
